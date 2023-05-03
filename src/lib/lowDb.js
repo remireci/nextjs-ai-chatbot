@@ -1,5 +1,6 @@
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
+
 import { Low } from "lowdb";
 import { JSONFile } from "lowdb/node";
 
@@ -14,14 +15,16 @@ if (!cached) {
 
 export async function dbConnect() {
     if (!cached.conn) {
-        const adapter = new JSONFile(file);        
-        const db = new Low(adapter);
+        const adapter = new JSONFile(file);
+        const data = {"messageHistory": {}};                
+        const db = new Low(adapter, data);
         cached.conn = db;         
     }
 
+    await cached.conn.read();
     // db.data = db.data || {messageHistory: {}};
     // or shorter:
-    cached.conn.data || {messageHistory: {}};
+    cached.conn.data || {"messageHistory": {}};
 
     return cached.conn;  
 }
