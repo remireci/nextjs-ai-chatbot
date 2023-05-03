@@ -1,9 +1,7 @@
 import { useState } from "react"
 
-
-
 export default function Prompt({onSubmit}) {
-    const [promptInput, setPromptInput] = useState();
+    const [promptInput, setPromptInput] = useState("");
 
     return (
         <textarea
