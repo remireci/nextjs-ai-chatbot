@@ -55,9 +55,7 @@ export default withNextSession(async (req, res) => {
             if (db.data.messageHistory[user.uid].length > MEMORY_SIZE) {
                 db.data.messageHistory[user.uid].splice(0,2);
             }
-
-            await db.write();
-
+            
             return res.status(200).json({ result: aiResponse });
 
         } catch (e) {
@@ -84,8 +82,7 @@ export default withNextSession(async (req, res) => {
 
         if(user) {
             const db = await dbConnect();
-            db.data.messageHistory[user.uid] = [];
-            await db.write();
+            db.data.messageHistory[user.uid] = [];            
 
             return res.status(200).json({message: "History cleared!"});
         }
