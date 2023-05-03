@@ -80,7 +80,7 @@ export default withNextSession(async (req, res) => {
     } else if (req.method === "DELETE") {
         const {user} = req.session;
 
-        if(user) {
+        if (user) {
             const db = await dbConnect();
             db.data.messageHistory[user.uid] = [];            
 

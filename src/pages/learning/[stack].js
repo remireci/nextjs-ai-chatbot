@@ -23,7 +23,7 @@ export default function Stack({ stack, stackKey }) {
 
     useEffect(() => {
         const cleanChatHistory = async () => {
-            await fetch("/api/completion", { method: "DELETE" });
+            await fetch("/api/completion", {method: "DELETE"});
         }
 
         cleanChatHistory();
@@ -58,7 +58,7 @@ export default function Stack({ stack, stackKey }) {
 
         const response = await fetch(`/api/completion?stack=${stackKey}`, {
             method: "POST",
-            body: JSON.stringify({ prompt }),
+            body: JSON.stringify({prompt}),
             headers: {
                 "Content-type": "application/json"
             }
@@ -93,7 +93,7 @@ export default function Stack({ stack, stackKey }) {
             return;
         }
 
-        await fetch(`/api/completion?uid=${session}`, { method: "PUT" })
+        await fetch(`/api/completion?uid=${session}`, {method: "PUT" })
         setActiveSession(session);
     }
 
