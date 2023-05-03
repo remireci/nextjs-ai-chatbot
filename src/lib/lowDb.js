@@ -14,15 +14,14 @@ if (!cached) {
 
 export async function dbConnect() {
     if (!cached.conn) {
-        const adapter = new JSONFile(file);
-        const data = {"messageHistory": {}};                
-        const db = new Low(adapter, data);
+        const adapter = new JSONFile(file);        
+        const db = new Low(adapter);
         cached.conn = db;         
     }
 
     // db.data = db.data || {messageHistory: {}};
     // or shorter:
-    cached.conn.data || {"messageHistory": {}};
+    cached.conn.data || {messageHistory: {}};
 
     return cached.conn;  
 }

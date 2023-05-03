@@ -5,7 +5,7 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { darcula } from "react-syntax-highlighter/dist/cjs/styles/prism";
 
 
-export default function Message({ text: initialText, avatar, idx, author }) {
+export default function Message({text: initialText, avatar, idx, author}) {
 
     const [text, setText] = useState(author === "ai" ? "" : initialText);
     const bgColorClass = idx % 2 === 0 ? "bg-slate-100" : "bg-slate-200";
@@ -33,7 +33,7 @@ export default function Message({ text: initialText, avatar, idx, author }) {
                 <ReactMarkdown
                     className={blinkingCursorClass}
                     components={{
-                        code({ inline, className, children, style, ...props }) {                            
+                        code({inline, className, children, style, ...props}) {                            
                             const match = /language-(\w+)/.exec(className || "");
                             return !inline && match ? (
                                 <SyntaxHighlighter
