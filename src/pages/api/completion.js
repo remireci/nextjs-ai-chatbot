@@ -1,6 +1,6 @@
 import { Configuration, OpenAIApi } from "openai";
 import { withNextSession } from "../../lib/session";
-import { dbConnect } from "app-chatgpt/lib/lowDb";
+import { dbConnect } from "../../lib/lowDb";
 import bots from "./bots.json";
 
 const configuration = new Configuration({
@@ -44,23 +44,23 @@ export default withNextSession(async (req, res) => {
             const openai = new OpenAIApi(configuration);
             const completion = await openai.createCompletion({
                 model: "text-davinci-003",
-                prompt: aiPrompt + db.data.messageHistory[user.uid].join("") + "Walt: ",
+                prompt: aiPrompt + db.data.messageHistory[user.uid].join("") + "Walt:",
                 temperature: 0.7,
                 max_tokens: 1024
             });
 
-            const aiResponse = (completion.data.choices[0].text.trim());
+            const aiResponse = (completion.data.choices[0]).text.trim();
             db.data.messageHistory[user.uid].push(`${AI_NAME}: ${aiResponse}\n`);
 
             if (db.data.messageHistory[user.uid].length > MEMORY_SIZE) {
                 db.data.messageHistory[user.uid].splice(0,2);
             }
-            
+
             return res.status(200).json({ result: aiResponse });
 
         } catch (e) {
             console.log(e.message);
-            res.status(500).json({ error: { message: e.message } });
+            return res.status(500).json({ error: { message: e.message } });
 
         }
 
