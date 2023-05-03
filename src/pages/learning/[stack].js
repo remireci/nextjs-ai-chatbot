@@ -48,7 +48,7 @@ export default function Stack({ stack, stackKey }) {
             return [
                 ...messages,
                 {
-                    id: "new Date().toISOString",
+                    id: new Date().toISOString,
                     author: "human",
                     avatar: "https://thrangra.sirv.com/Avatar2.png",
                     text: prompt
@@ -70,7 +70,7 @@ export default function Stack({ stack, stackKey }) {
                 return [
                     ...messages,
                     {
-                        id: "new Date().toISOString",
+                        id: new Date().toISOString,
                         author: "ai",
                         avatar: "/logo-open-ai.png",
                         text: json.result
