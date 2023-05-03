@@ -7,6 +7,5 @@ export function withNextSession(apiRoute) {
         cookieOptions: {
             secure: process.env.NODE_ENV === "production"
         }
-    })
-
+    });
 }
