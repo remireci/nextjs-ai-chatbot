@@ -1,11 +1,9 @@
-import Image from "next/image";
 import stacks from "../../data/stacks?json";
 import Header from "app-chatgpt/components/Header";
 import Message from "app-chatgpt/components/Message";
 import Prompt from "app-chatgpt/components/Prompt";
 import { useState, useRef, useEffect } from "react";
 import useUser from "app-chatgpt/hooks/useUser";
-import { set } from "mongoose";
 
 const SESSION_KEYS = [
     "u1-2023-04-28T08:44:59.986Z",
