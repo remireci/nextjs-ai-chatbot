@@ -1,0 +1,13 @@
+{
+  "messageHistory": {
+    "u2-2023-04-28T08:44:59.123Z": [],
+    "u3-2023-04-28T08:44:59.958Z": [
+      "Human: what do you know?\n",
+      "Walt: I'm an expert in Vue.js, a progressive JavaScript framework for building user interfaces. I can help you with anything related to Vue, from getting started with the basics to writing complex components. I'm also familiar with the core concepts and best practices, such as reactive data binding, server-side rendering, and component design.\n"
+    ],
+    "u4-2023-04-28T08:44:59.478Z": [
+      "Human: what do you know?\n",
+      "Walt: I know all about the Svelte framework. It's an open source JavaScript framework for creating user interfaces. It's fast, lightweight, and efficient. It has a simple syntax that enables you to create complex and powerful web applications quickly. With Svelte, you can create dynamic, reactive user interfaces without having to write complex code.\n"
+    ]
+  }
+}
