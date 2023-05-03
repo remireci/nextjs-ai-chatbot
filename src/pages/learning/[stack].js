@@ -1,4 +1,4 @@
-import stacks from "../../data/stacks?json";
+import stacks from "../../data/stacks.json";
 import Header from "app-chatgpt/components/Header";
 import Message from "app-chatgpt/components/Message";
 import Prompt from "app-chatgpt/components/Prompt";
