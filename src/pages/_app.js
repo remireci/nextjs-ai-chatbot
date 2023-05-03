@@ -1,4 +1,4 @@
-import 'app-chatgpt/styles/globals.css'
+import 'app-chatgpt/styles/globals.css';
 
 export default function App({ Component, pageProps }) {
   return (

@@ -2,7 +2,7 @@
 
 import { withNextSession } from "../../lib/session";
 
-export default withNextSession((userRoute));
+export default withNextSession(userRoute);
 
 function userRoute(req, res) {
     if (req.session.user) {
